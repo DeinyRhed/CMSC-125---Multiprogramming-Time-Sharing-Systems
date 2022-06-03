@@ -3,8 +3,6 @@ CMSC 125 - Machine Problem 1: Multiprogramming Time Sharing Systems
 Programmed by: Dianne M. Mondido
 
 """
-
-from math import floor  # For progress bar
 import random
 
 class User:
@@ -47,7 +45,7 @@ class Task:
         statusStat = '{:<7}'.format(self.__status.upper())
 
         # Progress Bar Status
-        rawTaskNumbers = floor((self.__remainingTime/self.__maxTime) * 10)
+        rawTaskNumbers = int((self.__remainingTime/self.__maxTime) * 10)
         progressBar = '█'*rawTaskNumbers + '░'*(10-rawTaskNumbers)
 
         return f'{str(self.__requester)}: {statusStat}, {taskStat} {progressBar}'
